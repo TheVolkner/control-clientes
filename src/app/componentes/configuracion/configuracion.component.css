@@ -1,0 +1,4 @@
+#config{
+  min-height: calc(100vh - 300px);
+  position: relative;
+}
