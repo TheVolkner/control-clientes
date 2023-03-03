@@ -1,8 +1,8 @@
 <!--BOTONES -->
 <section id="actions" class="mt-2 mb-1 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 d-grid gap-2">
+  <section class="container">
+    <article class="row">
+      <section class="col-md-3 d-grid gap-2">
         <a
           href="#"
           class="btn btn-primary"
@@ -11,20 +11,20 @@
         >
           <i class="fas fa-plus"></i> Agregar
         </a>
-      </div>
-    </div>
-  </div>
+      </section>
+    </article>
+  </section>
 </section>
 
 <!--LISTADO DE CLIENTES-->
 <section id="clientes">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9 my-3">
-        <div class="card bg-dark">
-          <div class="card-header bg-dark">
+  <section class="container">
+    <article class="row">
+      <section class="col-md-9 my-3">
+        <article class="card bg-dark">
+          <section class="card-header bg-dark">
             <h4 class="text-white">Listado de Clientes</h4>
-          </div>
+          </section>
           <table class="table table-striped table-dark">
             <thead class="table-dark">
               <tr>
@@ -50,36 +50,36 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+        </article>
+      </section>
       <!--TARJETAS LATERALES-->
       <!--TARJETAS LATERAL 1-->
-      <div class="col-md-3">
-        <div class="card text-center bg-danger text-white mb-3">
-          <div class="card-body">
+      <section class="col-md-3">
+        <section class="card text-center bg-danger text-white mb-3">
+          <section class="card-body">
             <h3>Saldo Total</h3>
             <h4 class="display-4">
               {{ getSaldoTotal() | currency : "USD" : "$" }}
             </h4>
-          </div>
-        </div>
+          </section>
+        </section>
         <!--TARJETAS LATERAL 2-->
-        <div class="card text-center bg-success text-white mb-5">
-          <div class="card-body">
+        <section class="card text-center bg-success text-white mb-5">
+          <section class="card-body">
             <h3>Total Clientes</h3>
             <h4 class="display-4">
               <i class="fas fa-users"></i> {{ clientes?.length }}
             </h4>
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
       <!--FIN TARJETAS LATERALES-->
-    </div>
-  </div>
+    </article>
+  </section>
 </section>
 
 <!--MODAL QUE SE ABRE CON EL BOTON-->
-<div
+<section
   class="modal fade"
   id="agregarClienteModal"
   tabindex="-1"
@@ -87,9 +87,9 @@
   aria-hidden="true"
 >
   <!--HEADER DEL MODAL-->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-primary text-white">
+  <article class="modal-dialog">
+    <section class="modal-content">
+      <section class="modal-header bg-primary text-white">
         <h1 class="modal-title fs-5" id="ModalLabel">Agregar Cliente</h1>
         <button
           type="button"
@@ -97,11 +97,11 @@
           data-bs-dismiss="modal"
           aria-label="Close"
         ></button>
-      </div>
+      </section>
       <!--DISEÑAMOS EL FORMULARIO CON VALIDACION INCLUIDA-->
       <form #clienteForm="ngForm" (ngSubmit)="agregar(clienteForm)">
-        <div class="modal-body">
-          <div class="form-group">
+        <section class="modal-body">
+          <section class="form-group">
             <label for="nombre">Nombre:</label>
             <input
               type="text"
@@ -113,20 +113,20 @@
               minlength="2"
               class="form-control"
             />
-            <div
+            <section
               [hidden]="!nombre.errors?.['required']"
               class="invalid-feedback"
             >
               Nombre requerido.
-            </div>
-            <div
+            </section>
+            <section
               [hidden]="!nombre.errors?.['minlength']"
               class="invalid-feedback"
             >
               Debe contener al menos 2 caracteres.
-            </div>
-          </div>
-          <div class="form-group">
+            </section>
+          </section>
+          <section class="form-group">
             <label for="apellido">Apellido:</label>
             <input
               type="text"
@@ -138,20 +138,20 @@
               minlength="2"
               class="form-control"
             />
-            <div
+            <section
               [hidden]="!apellido.errors?.['required']"
               class="invalid-feedback"
             >
               Apellido requerido
-            </div>
-            <div
+            </section>
+            <section
               [hidden]="!apellido.errors?.['minlength']"
               class="invalid-feedback"
             >
               Debe contener al menos 2 caracteres.
-            </div>
-          </div>
-          <div class="form-group">
+            </section>
+          </section>
+          <section class="form-group">
             <label for="email">Email:</label>
             <input
               type="email"
@@ -163,20 +163,20 @@
               pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
               class="form-control"
             />
-            <div
+            <section
               [hidden]="!email.errors?.['required']"
               class="invalid-feedback"
             >
               Email requerido
-            </div>
-            <div
+            </section>
+            <section
               [hidden]="!email.errors?.['pattern']"
               class="invalid-feedback"
             >
               Email no válido.
-            </div>
-          </div>
-          <div class="form-group">
+            </section>
+          </section>
+          <section class="form-group">
             <label for="saldo">Saldo:</label>
             <input
               type="number"
@@ -187,14 +187,14 @@
               required
               class="form-control"
             />
-            <div
+            <section
               [hidden]="!saldo.errors?.['required']"
               class="invalid-feedback"
             >
               Saldo requerido
-            </div>
-          </div>
-          <div class="modal-footer">
+            </section>
+          </section>
+          <section class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
@@ -204,9 +204,9 @@
               Cerrar
             </button>
             <button type="submit" class="btn btn-primary">Agregar</button>
-          </div>
-        </div>
+          </section>
+        </section>
       </form>
-    </div>
-  </div>
-</div>
+    </section>
+  </article>
+</section>
